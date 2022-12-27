@@ -1,0 +1,10 @@
+# ignore le dossier dart-sass
+/dart-sass
+
+# ignore le dossier node modules
+/node_modules
+
+#ignore tous les fichiers paramétrage Json
+*.json
+
+/.bash_profile
