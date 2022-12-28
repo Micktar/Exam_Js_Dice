@@ -1,3 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
+html {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-image: url(/images/Wood.jpg);
+  background-size: 200%;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header {
+  background: #ad6e5b;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  color: blue;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background: black;
+  }
+
+  .alert {
+    height: 80vw;
+    font-size: 30px;
+    background: red;
+    color: white;
+    text-align: center;
+    margin-top: 15vh;
+    /* min-width: 80vw; */
+  }
+
+  .img_alert, .message_alert, .img_landscape {
+    margin-top: 40px;
+  }
+
+  img {
+    width: 15vw;
+  }
+}
+@media screen and (min-width: 701px) {
+  .alert {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
