@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +72,7 @@ h1 {
     align-content: center;
     justify-items: center;
     grid-template-areas: "header" "game_platform";
-    max-width: 960px;
+    max-width: 1400px;
   }
 
   .header {
@@ -83,20 +84,27 @@ h1 {
     display: grid;
     grid-template-columns: 2fr 1.5fr 2fr;
     grid-template-rows: 0.8fr 1fr 1.2fr;
-    grid-template-areas: "player_one control_panel player_two" "player_one control_panel player_two" "player_one control_panel player_two";
+    grid-template-areas: "player_one_control control_panel player_two_control" "player_one_control control_panel player_two_control" "player_one_control control_panel player_two_control";
     justify-self: stretch;
     grid-area: game_platform;
     background: linear-gradient(90deg, #cdc2c2 50%, white 50%);
+    margin-top: 10px;
     padding: 10px;
   }
 
   /* Bandeau central*/
   .control_panel {
-    grid-template-areas: "new_game" "img_dice" "btn_play_control";
+    grid-template-areas: "new_game" "dice" "btn_play_control";
     grid-area: control_panel;
   }
-  .control_panel .btn {
+  .control_panel button {
+    background: none;
+    border: none;
     font-size: 20px;
+  }
+  .control_panel i {
+    font-size: 20px;
+    color: red;
   }
 
   svg {
@@ -110,23 +118,22 @@ h1 {
     grid-area: new_game;
   }
 
-  .img_dice {
+  .dice {
     justify-self: center;
-    grid-area: img_dice;
   }
 
   img {
-    width: 100px;
+    width: 180px;
   }
 
   .btn_play_control {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
     grid-template-areas: "roll" "hold";
     justify-self: center;
     grid-area: btn_play_control;
-  }
-
-  .roll, .hold {
-    justify-self: center;
   }
 
   .roll {
@@ -140,70 +147,51 @@ h1 {
   }
 
   /* PLAYER*/
-  .player_one, .player_two, .control_panel {
+  .active .player_name::after {
+    content: "•";
+    font-size: 47px;
+    position: relative;
+    color: #EB4D4D;
+    left: 15px;
+  }
+
+  .player_one_control, .player_two_control, .control_panel {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
   }
 
-  .player_one, .player_two {
+  .player_one_control, .player_two_control {
     justify-self: center;
   }
 
-  .player_one {
-    grid-template-areas: "player_name1" "score1" "currentbox_1";
-    grid-area: player_one;
+  .player_one_control {
+    grid-template-areas: "player_name" "player_score" "player_current_box";
+    grid-area: player_one_control;
   }
 
-  .player_two {
-    grid-template-areas: "player_name2" "score2" "current_box_2";
-    grid-area: player_two;
+  .player_two_control {
+    grid-template-areas: "player_name" "player_score" "player_current_box";
+    grid-area: player_two_control;
   }
 
-  .player_name1, .player_name2 {
+  .player_name {
     justify-self: center;
     align-self: end;
     font-size: 60px;
     text-transform: uppercase;
   }
 
-  .player_name1 {
-    grid-area: player_name1;
-  }
-
-  .player_name2 {
-    grid-area: player_name2;
-  }
-
-  .score1, .score2 {
+  .player_score {
     font-size: 8vw;
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
     align-self: flex-start;
     justify-self: center;
   }
 
-  .score1 {
-    grid-area: score1;
-  }
-
-  .score2 {
-    grid-area: score2;
-  }
-
-  .current_label {
-    justify-self: center;
-    align-self: center;
-    grid-area: current_label;
-  }
-
-  .currentbox_1, .btn_play_control, .current_box_2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-columns: 1fr;
-  }
-
-  .currentbox_1, .current_box_2 {
+  .player_current_box {
     align-self: center;
     justify-self: center;
     background: rgba(255, 0, 0, 0.617);
@@ -211,14 +199,9 @@ h1 {
     width: 120px;
   }
 
-  .currentbox_1 {
-    grid-template-areas: "current_label" "current_score1";
-    grid-area: currentbox_1;
-  }
-
-  .current_box_2 {
-    grid-template-areas: "current_label" "current_score2";
-    grid-area: current_box_2;
+  .current_label {
+    text-align: center;
+    grid-area: current_label;
   }
 
   .current_score1 {
@@ -232,12 +215,12 @@ h1 {
   .current_score1, .current_score2 {
     font-size: 25px;
     color: white;
-    justify-self: center;
-    align-self: start;
+    padding-top: 5px;
+    text-align: center;
   }
 }
-@media screen and (max-width: 1400px) {
-  .player_name1, .player_name2 {
+@media screen and (max-width: 1200px) {
+  .player_name {
     font-size: 40px;
   }
 
@@ -253,6 +236,12 @@ h1 {
     font-size: 20px;
   }
 
+  .control_panel button {
+    font-size: 15px;
+  }
+  .control_panel i {
+    font-size: 15px;
+  }
   .control_panel img {
     width: 85px;
   }
