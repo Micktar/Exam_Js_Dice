@@ -138,13 +138,13 @@ h1 {
     grid-area: btn_play_control;
   }
 
-  #btn-roll {
+  #btn_roll {
     grid-area: roll;
     align-self: end;
     padding-bottom: 20px;
   }
 
-  #btn-hold {
+  #btn_hold {
     grid-area: hold;
     align-self: start;
     padding-top: 20px;
@@ -204,9 +204,8 @@ h1 {
   }
 
   .current_label {
-    grid-area: current_label;
     text-align: center;
-    text-transform: capitalize;
+    grid-area: current_label;
   }
 
   .current_score1 {
