@@ -98,12 +98,13 @@ h1 {
     grid-area: control_panel;
   }
   .control_panel button {
+    text-transform: uppercase;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 25px;
   }
   .control_panel i {
-    font-size: 20px;
+    font-size: 25px;
     color: red;
   }
 
@@ -119,6 +120,7 @@ h1 {
   }
 
   .dice {
+    grid-area: dice;
     justify-self: center;
   }
 
@@ -136,14 +138,16 @@ h1 {
     grid-area: btn_play_control;
   }
 
-  .roll {
-    align-self: end;
+  #btn-roll {
     grid-area: roll;
+    align-self: end;
+    padding-bottom: 20px;
   }
 
-  .hold {
+  #btn-hold {
     grid-area: hold;
-    transform: translateY(20px);
+    align-self: start;
+    padding-top: 20px;
   }
 
   /* PLAYER*/
@@ -157,7 +161,7 @@ h1 {
 
   .player_one_control, .player_two_control, .control_panel {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 12fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
   }
@@ -200,8 +204,9 @@ h1 {
   }
 
   .current_label {
-    text-align: center;
     grid-area: current_label;
+    text-align: center;
+    text-transform: capitalize;
   }
 
   .current_score1 {
