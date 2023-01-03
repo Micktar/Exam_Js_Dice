@@ -36,13 +36,13 @@ let roll = document.querySelector('#btn_roll').addEventListener('click', () => {
   
   // récupère l'image du dé
     diceDOM.src = 'images/dé/dice_' + dice + '.png'; 
-
-
     console.log(dice)
   }
 
 })
 
+
+document.querySelector('#btn_newGame').addEventListener('click', init)
 
 
 init();
