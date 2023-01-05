@@ -39,6 +39,14 @@ let roll = document.querySelector('#btn_roll').addEventListener('click', () => {
   
   // récupère l'image du dé
     diceDOM.src = 'images/dé/dice_' + dice + '.png'; 
+ 
+    if(dice !==1) {
+      roundScore += dice;
+
+      document.querySelector('#current_' + currentPlayer).textContent = roundScore;
+    } else {
+      nextPlayer(dice) // créer function nextPlayer
+    }
     console.log(dice)
  
   }
@@ -59,7 +67,6 @@ let hold = document.querySelector('.btn-hold').addEventListener('click', () => {
 
 
 
-/* bug trouvé sur le bouton hold, remplacement score_1 par score_0 */
 
 
 
