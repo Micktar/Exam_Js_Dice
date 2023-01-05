@@ -2,22 +2,25 @@
 /* ******************** SCRIPT POUR UN JEU DE DÉ ***************************** */
 
 /* -------------------------- Déclaration des variables du GAME PLAY------------------------ */
-let gamePlay, scores, roundScores;
+let scores, roundScore, currentPlayer, gamePlay;
 /* let playerName_1 = prompt('Quel est le nom du Joueur 1')
 let playerName_2 = prompt('Quel est le nom du Joueur 2') */
 
 /* -------------------------- Fonction d'initialisation du GAME PLAY------------------------ */
 let init = () => {
   scores = [0,0];
-  roundScores = 0;
+  currentPlayer = 0;
+  roundScore = 0;
   gamePlay = true;
 
   document.querySelector('.dice').style.display = 'none';
   
+  document.getElementById('score_0').textContent = '0';
   document.getElementById('score_1').textContent = '0';
-  document.getElementById('score_2').textContent = '0';
+  document.getElementById('current_0').textContent = '0';
   document.getElementById('current_1').textContent = '0';
-  document.getElementById('current_2').textContent = '0';
+  document.getElementById('player_1').textContent = 'Player 1';
+  document.getElementById('player_2').textContent = 'Player 2';
 }
 
 /* ------------------------- Fonction pour lancer le dé ---------------------------------- */ 
@@ -37,9 +40,28 @@ let roll = document.querySelector('#btn_roll').addEventListener('click', () => {
   // récupère l'image du dé
     diceDOM.src = 'images/dé/dice_' + dice + '.png'; 
     console.log(dice)
+ 
   }
 
 })
+
+let hold = document.querySelector('.btn-hold').addEventListener('click', () => {
+  if(gamePlay){
+    scores[currentPlayer] += roundScore;
+
+    document.querySelector('#score_' + currentPlayer).textContent = scores[currentPlayer];
+
+   
+
+    console.log(scores)
+  }
+})
+
+
+
+/* bug trouvé sur le bouton hold, remplacement score_1 par score_0 */
+
+
 
 
 document.querySelector('#btn_newGame').addEventListener('click', init)
