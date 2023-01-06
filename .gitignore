@@ -2,7 +2,7 @@
 /dart-sass
 
 # ignore le dossier node modules
-/node_modules
+/images/node_modules
 
 #ignore tous les fichiers paramétrage Json
 *.json

@@ -1,3 +1,5 @@
+@import "../images/node_modules/bootstrap/scss/bootstrap";
+
 * {
   margin: 0;
   padding: 0;
@@ -88,9 +90,9 @@ h1 {
     grid-template-columns: 2fr 1.5fr 2fr;
     grid-template-rows: 0.8fr 1fr 1.2fr;
     grid-template-areas:
-      "player_1_control control_panel player_2_control"
-      "player_1_control control_panel player_2_control"
-      "player_1_control control_panel player_2_control";
+      "player_0_control control_panel player_1_control"
+      "player_0_control control_panel player_1_control"
+      "player_0_control control_panel player_1_control";
     justify-self: stretch;
     grid-area: game_platform;
     background: linear-gradient(90deg, rgb(205, 194, 194) 50%, rgb(255, 255, 255) 50%);
@@ -129,6 +131,10 @@ h1 {
     align-self: start;
     transform: translateY(30px);
     grid-area: new_game;
+
+    .btn:focus {
+      box-shadow: none;
+    } 
   }
 
   .dice { 
@@ -138,6 +144,17 @@ h1 {
 
   img {
     width: 180px;
+  }
+
+  .cotillon {
+    position: relative;
+    width: 100%;
+
+    iframe {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+    }
   }
 
   .btn_play_control {  
@@ -176,15 +193,23 @@ h1 {
     left: 15px;
   }
 
-  .player_1_control, .player_2_control, .control_panel {
+  .player_0_control, .player_1_control, .control_panel {
     display: grid;
     grid-template-columns: 12fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
   }
 
-  .player_1_control, .player_2_control {
+  .player_0_control, .player_1_control {
     justify-self: center;
+  }
+
+  .player_0_control {  
+    grid-template-areas:
+      "player_name"
+      "player_score"
+      "player_current_box";
+    grid-area: player_0_control;
   }
 
   .player_1_control {  
@@ -193,14 +218,6 @@ h1 {
       "player_score"
       "player_current_box";
     grid-area: player_1_control;
-  }
-
-  .player_2_control {  
-    grid-template-areas:
-      "player_name"
-      "player_score"
-      "player_current_box";
-    grid-area: player_2_control;
   }
   
   .player_name {
@@ -276,4 +293,6 @@ h1 {
       width: 85px;
     }
   }
+
+  
 }
