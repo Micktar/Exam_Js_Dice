@@ -265,24 +265,21 @@ h1 {
 
 @media screen and (max-width: 1200px) {  
   .player_name {
-    font-size: 45px;
+    font-size: 30px;
   }
-  .score1, .score2 {
-    font-size: 60px;
-  }
-
+ 
   .current_label {
     font-size: 16px;
   }
 
   .current_score1, .current_score2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .control_panel { 
      
     button {
-      font-size: 23px;
+      font-size: 15px;
     }
     
     i {
@@ -290,7 +287,7 @@ h1 {
     }
   
     img {
-      width: 150px;
+      width: 90px;
     }
   }
 

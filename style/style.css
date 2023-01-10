@@ -11342,11 +11342,7 @@ h1, .h1 {
 }
 @media screen and (max-width: 1200px) {
   .player_name {
-    font-size: 45px;
-  }
-
-  .score1, .score2 {
-    font-size: 60px;
+    font-size: 30px;
   }
 
   .current_label {
@@ -11354,17 +11350,17 @@ h1, .h1 {
   }
 
   .current_score1, .current_score2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .control_panel button {
-    font-size: 23px;
+    font-size: 15px;
   }
   .control_panel i {
     font-size: 15px;
   }
   .control_panel img {
-    width: 150px;
+    width: 90px;
   }
 }
 
